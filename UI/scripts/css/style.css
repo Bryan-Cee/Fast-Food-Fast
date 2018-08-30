@@ -259,3 +259,22 @@ header {
 .mid-position {
     padding-top: 3.5rem;
 }
+
+/* history */
+#small {
+    font-size: smaller;
+}
+
+#badge {
+    display: flex;
+    flex-direction: row;
+}
+
+.badge {
+    font-size: small;
+    background-color: yellowgreen;
+    border-radius: .375rem;
+    margin: .2rem;
+    text-align: center;
+    padding: 2px;
+}
