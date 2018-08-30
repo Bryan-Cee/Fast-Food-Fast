@@ -193,3 +193,14 @@ section .container div .w-50 {
     font-weight: 600;  
 }
 
+/* Sign up */
+#display-text {
+    padding-top: 2rem;
+    font-size: 2em;
+    font-style: italic;
+    text-align: center;
+    color: #000000;
+    font-weight: 400;
+    margin-right: 2rem;
+}
+
