@@ -278,3 +278,7 @@ header {
     text-align: center;
     padding: 2px;
 }
+
+#mark_done{
+    display: none;
+}
