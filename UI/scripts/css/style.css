@@ -34,6 +34,13 @@ header {
     font-weight: bold;
 }
 
+.land-bg {
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 100%;
+    border-radius: 10px;
+}
+
+
 .bg-pic {
     background: url("../../img/background.jpg") no-repeat;
     background-size: cover;
@@ -188,7 +195,7 @@ header {
 
 /* index */
 #index-text {
-    padding-top: 2rem;
+    margin-top: 5%;
     font-size: 2em;
     text-align: center;
     color: #000000;
@@ -197,7 +204,8 @@ header {
 
 /* Sign up */
 #display-text {
-    padding-top: 2rem;
+    padding: .375rem;
+    margin-top: 5%;
     font-size: 2em;
     font-style: italic;
     text-align: center;
