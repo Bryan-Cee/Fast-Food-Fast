@@ -1,0 +1,280 @@
+html {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    line-height: 1.5;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+/* general */
+h3,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: aqua;
+}
+
+header {
+    background-color: #e9ecef;
+    padding: 10px;
+    min-height: 10px;
+    opacity: .6;
+}
+
+.text-dark {
+    color: #000000;
+    font-weight: bold;
+}
+
+.bg-pic {
+    background: url("../../img/background.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    color: white;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+#logo {
+    color: #7a0001;
+    line-height: 1.15;
+    font-size: 1.8em;
+}
+
+.container {
+    width: 80%;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    display: flex;
+}
+
+/* Floats */
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.center-position {
+    width: 50%;
+    margin: auto;
+}
+
+/* Margin */
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mr-1 {
+    margin-right: 1rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.ml-5p {
+    margin-left: 5%;
+}
+
+/* columns */
+.col {
+    display: flex;
+    margin-right: 15px;
+}
+
+.w-b {
+    display: block;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-75 {
+    width: 75%
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-45 {
+    width: 45%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+/* form */
+.form {
+    background-color: #0000006c;
+    padding: .75rem .5rem;
+    border-radius: .4rem;
+}
+
+.form-control {
+    display: block;
+    width: 95%;
+    padding: 0.375rem 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4d5052;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+::placeholder {
+    color: #b5bac0;
+}
+
+/* button */
+.btn {
+    padding: 0.375rem 0.95rem;
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.5;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.6rem;
+}
+
+/* button color */
+.btn-green {
+    background-color: #3ad87c;
+}
+
+.btn-green:hover {
+    background-color: #2eac62;
+    cursor: pointer;
+}
+
+.btn-red {
+    background-color: #e02929;
+}
+
+.btn-red:hover {
+    cursor: pointer;
+    background-color: #a11d1d;
+    box-shadow: #2eac62;
+}
+
+/* index */
+#index-text {
+    padding-top: 2rem;
+    font-size: 2em;
+    text-align: center;
+    color: #000000;
+    font-weight: 600;
+}
+
+/* Sign up */
+#display-text {
+    padding-top: 2rem;
+    font-size: 2em;
+    font-style: italic;
+    text-align: center;
+    color: #000000;
+    font-weight: 400;
+    margin-right: 2rem;
+}
+
+/* inventory */
+
+#food-list {
+    font-weight: 400;
+    color: #000000;
+}
+/* list-elements */
+.l-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.l-group-item {
+    border-radius: 0.25rem;
+    display: flex;
+    margin-bottom: .4rem;
+    background-color: rgba(255, 255, 255, 0.466);
+}
+
+.l-group-item img {
+    width: 10rem;
+    height: 9rem;
+    border-radius: 0.25rem 0 0 0.25rem;
+    padding-right: .8rem;
+}
+
+.l-item-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.l-item-text small {
+    font-size: small;
+}
+
+.btn-group button {
+    margin: 0 0 .1rem .4rem;
+}
+
+.li-text {
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+/* order */
+.mid-position {
+    padding-top: 3.5rem;
+}
+
+/* history */
+#small {
+    font-size: smaller;
+}
+
+#badge {
+    display: flex;
+    flex-direction: row;
+}
+
+.badge {
+    font-size: small;
+    background-color: yellowgreen;
+    border-radius: .375rem;
+    margin: .2rem;
+    text-align: center;
+    padding: 2px;
+}
