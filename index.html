@@ -27,14 +27,15 @@
                     <div class="mb-1">
                         Log in to place an order at the comfort of your home or work place
                     </div>
-                    <form action="UI/pages/user/order.html" class="mt-1 form">
+                    <form action="" method="POST" class="mt-1 form" id="login-form">
+                        <div id="login-alert"></div>
                         <div class="mb-1">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" placeholder="Email" required>
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" placeholder="Username" id="username" required>
                         </div>
                         <div class="mb-1">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" placeholder="Password" required>
+                            <input type="password" class="form-control" placeholder="Password" id="password" required>
                         </div>
                         <div class="mb-1">
                             <button type="submit" class="btn btn-green">Login</button>
@@ -48,6 +49,6 @@
             </div>
         </div>
     </section>
+    <script src="./UI/scripts/js/login.js"></script>
 </body>
-
 </html>
