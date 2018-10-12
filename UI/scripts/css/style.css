@@ -29,6 +29,11 @@ header {
     opacity: .6;
 }
 
+.red-alert {
+    font-weight: bold;
+    color: red;
+}
+
 .text-dark {
     color: #000000;
     font-weight: bold;
