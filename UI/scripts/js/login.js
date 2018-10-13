@@ -16,7 +16,7 @@ function loginfunc(e) {
         }
     };
 
-    let request = new Request('http://localhost:5000/api/v2/auth/login', reqInit);
+    let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/auth/login', reqInit);
 
     fetch(request)
         .then(req => req.json())
