@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Order Meal</title>
+    <link rel="stylesheet" href="../../scripts/css/style.css">
+    <script async src="../../scripts/js/main.js"></script>
+    <script async src="../../scripts/js/menu.js"></script>
+    <script async src="../../scripts/js/order.js"></script>
+</head>
+
+<body class="bg-pic">
+    <header>
+        <div id="logo" class="container">
+            <h3>Fast-Food-Fast</h3>
+            <small><i>Fast food delivery real quick</i></small>
+            <div class=" float-right">
+                <a href="../../../index.html" class="btn btn-red">Log-out</a>
+                <a href="../user/history.html" class="btn btn-red">See history</a>
+                <a href="../admin/inventory.html" class="btn btn-red">Admin Inventory</a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="w-75 center-position">
+                    <form method='' class="popup" id="order-popup">
+                        <div class="popup-header">
+                            <p class="popup-close" onclick="closepopup(this)">&times;</p>
+                        </div>
+                        <div class="popup-body">
+                            <input type="text" id="meal_id" hidden>
+                            <label for="meal_name">Meal</label>
+                            <input type="text" name="" class="popup-control" id="meal_name" readonly>
+                            <label for="Quantity">Quantity</label>
+                            <input type="number" class="popup-control" id="quantity" min="1" max="50" value="1" placeholder="Enter quantity">
+                            <button type="submit" class="mt-1 btn btn-green">Order</button>
+                        </div>
+                    </form>
+                    <ul class="l-group clear" id="food-list">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
