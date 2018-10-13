@@ -25,14 +25,14 @@ function create_account(e) {
             if (json.status == 'success') {
                 create_accnt.reset();
                 alert(json.message)
-                window.location.href = '../../../index.html'
+                window.location.href = '../../../home.html'
                 return false;
             }
 
             let name_msg = document.getElementById('name_msg');
             let name_err = "Enter only alphabetic characters for your username"
             let email_msg = document.getElementById('email_msg');
-            let email_err = "Enter the correct format of the email e.g.johndoe @mail.com"
+            let email_err = "Enter the correct format of the email e.g.johndoe@mail.com"
             let password_msg = document.getElementById('password_msg');
             let password_err = "Enter a password longer than 6 characters"
             let pwd = document.getElementById('password');

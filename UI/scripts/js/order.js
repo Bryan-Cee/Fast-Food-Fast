@@ -30,7 +30,7 @@ function order(e) {
             return false;
         } else if (json.message == 'Token has expired Please login again') {
             alert(json.message);
-            window.location.href = '../../../index.html';
+            window.location.href = '../../../home.html';
         } else {
             alert(json.message);
         }
