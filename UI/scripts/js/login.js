@@ -23,7 +23,7 @@ function loginfunc(e) {
         .then(res => {
             if (res.Token) {
                 localStorage.setItem('token', res.Token);
-                window.location.href = './UI/pages/user/order.html'
+                window.location.href = './UI/pages/user/menu.html'
             } else {
                 let login_alert = document.getElementById('login-alert');
                 login_alert.innerHTML = res.message;
