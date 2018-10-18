@@ -47,8 +47,9 @@ header {
 
 
 .bg-pic {
-    background: url("../../img/background.jpg") no-repeat;
+    background: url("../../img/background.jpg") top right no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     width: 100%;
     color: white;
 }
@@ -103,6 +104,10 @@ header {
 
 .mt-1 {
     margin-top: 1rem;
+}
+
+.mt-3 {
+    margin-top: 3.5rem;
 }
 
 .ml-5p {
@@ -292,7 +297,7 @@ header {
     border-radius: 0.25rem;
     display: flex;
     margin-bottom: .4rem;
-    background-color: rgba(255, 255, 255, 0.466);
+    background-color: rgba(255, 255, 255, 0.637);
 }
 
 .l-group-item img {
@@ -336,15 +341,15 @@ header {
     flex-direction: row;
 }
 
-.badge {
-    font-size: small;
-    background-color: yellowgreen;
-    border-radius: .375rem;
-    margin: .2rem;
-    text-align: center;
-    padding: 2px;
-}
-
 #mark_done {
     display: none;
+}
+
+.message {
+    font-size: xx-large;
+    background-color: rgba(255, 255, 255, 0.637);
+    border-radius: .375rem;
+    padding: 4px;
+    text-align: center;
+    margin: auto;
 }

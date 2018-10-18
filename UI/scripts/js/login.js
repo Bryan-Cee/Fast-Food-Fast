@@ -18,6 +18,7 @@ function loginfunc(e) {
 
     let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/auth/login', reqInit);
 
+
     fetch(request)
         .then(req => req.json())
         .then(res => {
@@ -29,5 +30,6 @@ function loginfunc(e) {
                 login_alert.innerHTML = res.message;
                 login_alert.className = 'red-alert';
             }
-        });
+        })
+        .catch(err => console.log(err));
 }
