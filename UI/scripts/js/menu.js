@@ -11,13 +11,13 @@ let reqInit = {
 
 let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
 
+
 let createNode = (element) => document.createElement(element);
 let append = (parent, child) => parent.appendChild(child);
 
 fetch(request)
     .then(res => res.json())
     .then(json => {
-        console.log(json)
         meals = json.menu
 
         meals.map((meal) => {
@@ -28,6 +28,7 @@ fetch(request)
             // img
             let img = createNode('img');
             img.src = meal.pic;
+            img.alt = `A picture of ${meal.meal_name}`
 
             // div-main
             let first_div = createNode('div');
@@ -76,4 +77,3 @@ fetch(request)
         });
     })
     .catch(err => console.log(err));
-    
