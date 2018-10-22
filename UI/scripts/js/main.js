@@ -1,11 +1,3 @@
-function accepted(e) {
-    e.style.display = "none";
-    e.nextElementSibling.style.display = "none";
-    var parent = e.parentNode;
-    parent.lastElementChild.style.display = "inline-block"
-}
-
-
 function closepopup(e) {
     var parent = e.parentNode;
     parent.parentNode.style.display = 'none';
@@ -19,4 +11,10 @@ function ordermeal(e) {
     let mealid = e.previousElementSibling.value
     document.getElementById('meal_id').value = mealid;
     document.getElementById('meal_name').value = mealname;
+}
+
+var meal_item = document.getElementById('addmealpopup');
+
+function add_menu() {
+    meal_item.style.display = 'block';
 }

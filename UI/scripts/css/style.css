@@ -173,7 +173,7 @@ header {
     left: 0;
     position: fixed;
     overflow: auto;
-    display: none;
+    display: none;   
 }
 
 .popup-control {
@@ -209,10 +209,6 @@ header {
     color: rgb(230, 21, 21);
     text-decoration: none;
     cursor: pointer;
-}
-
-.times {
-    top: 0;
 }
 
 ::placeholder {
@@ -351,5 +347,22 @@ header {
     border-radius: .375rem;
     padding: 4px;
     text-align: center;
+    margin: auto;
+}
+
+.add-meal {
+    width: 30%;
+    background-color: #0000006c;
+    border-radius: 4px;
+    margin: auto;
+    z-index: 1;
+    right: 0;
+    left: 0;
+    position: fixed;
+    overflow: auto;
+    display: none;
+}
+
+.center {
     margin: auto;
 }
