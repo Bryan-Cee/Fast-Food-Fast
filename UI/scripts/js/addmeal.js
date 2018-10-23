@@ -13,8 +13,7 @@ let reqInit = {
     'headers': reqHeader
 };
 
-// let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
-let request = new Request('http://localhost:5000/api/v2/menu', reqInit);
+let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
 
 
 let createNode = (element) => document.createElement(element);
@@ -78,9 +77,10 @@ fetch(request)
             append(li, second_div);
             append(second_div, mid);
             append(second_div, order_now);
-
-
         });
+        if (json.message == "Please login") {
+            window.location.href = "../../../home.html";
+        }
     })
     .catch(err => console.log(err));
 
@@ -105,7 +105,7 @@ function addToMenu(e) {
         })
     }
 
-    const req = new Request('http://localhost:5000/api/v2/menu', reqInit);
+    const req = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
     fetch(req)
         .then(res => res.json())
         .then(json => {
@@ -128,7 +128,7 @@ function deletemeal(e) {
             }),
         }
         let order_id = document.getElementById('meal_id').value;
-        const req = new Request(`http://localhost:5000/api/v2/menu/${order_id}`, reqInit);
+        const req = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/menu/${order_id}`, reqInit);
         fetch(req)
             .then(res => res.json())
             .then(json => {
