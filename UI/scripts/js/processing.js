@@ -6,7 +6,8 @@ let reqInit = {
     })
 };
 
-let req = new Request("http://localhost:5000/api/v2/orders/", reqInit);
+let req = new Request("https://immense-ocean-82555.herokuapp.com/api/v2/orders/", reqInit);
+
 
 let order_list = document.getElementById("food-list");
 
@@ -150,8 +151,11 @@ fetch(req)
                     mealstatusp.style.color = "red";
                 }
             });
+        } else {
+            console.log(json.message)
         }
-    });
+    })
+    .catch(err => console.log(err))
 
 function process(e, status, id) {
     let order_id = id;
@@ -167,7 +171,7 @@ function process(e, status, id) {
     };
 
     let acceptReq = new Request(
-        `http://localhost:5000/api/v2/orders/${order_id}`,
+        `https://immense-ocean-82555.herokuapp.com/api/v2/orders/${order_id}`,
         acceptInit
     );
     fetch(acceptReq)
