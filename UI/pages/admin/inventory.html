@@ -7,58 +7,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fast-Food-Fast</title>
     <link rel="stylesheet" href="../../scripts/css/style.css">
-    <script src="../../scripts/js/main.js"></script>
+    <script async src="../../scripts/js/addmeal.js"></script>
+    <script async src="../../scripts/js/main.js"></script>
 </head>
 
-<body class="bg-pic">
+<body class="bg-pic" onload="checkadmin()">
     <header>
         <div id="logo" class="container">
             <h3>Fast-Food-Fast</h3>
             <small><i>Fast food delivery real quick</i></small>
-            <div class=" float-right">
-                <a href="../admin/inventory.html" class="btn btn-red">Inventory</a>
+            <div class="float-right">
                 <a href="../admin/orders.html" class="btn btn-red">See orders</a>
                 <a href="../../../home.html" class="btn btn-red">Log-out</a>
             </div>
         </div>
     </header>
     <section>
-        <div class="container">
+        <div class="mt-1">
             <div class="row">
-                <div class="w-50 center-position">
-                    <form action="" method="post" class="form w-75">
+                <form action="" method="post" id="addmealpopup" class="add-meal">
+                    <div class="popup-header">
+                        <span class="popup-close" onclick="closepopup(this)">CLOSE</span>
+                    </div>
+                    <div class="popup-body">
                         <div class="mb-1">
                             <label for="mealname">Meal name</label>
-                            <input type="text" value="meal-name" class="form-control">
+                            <input type="text" placeholder="meal-name" id="meal_name" class="form-control" required>
                         </div>
                         <div class="mb-1">
                             <label for="mealname">Meal price</label>
-                            <input type="text" value="meal-price" class="form-control">
+                            <input type="number" step="0.01" placeholder="meal-price" id="meal_price" class="form-control"
+                                required>
                         </div>
                         <div class="mb-1">
                             <label for="mealname">Meal description</label>
-                            <input type="text" value="meal-desc" class="form-control">
+                            <textarea type="text" placeholder="meal-desc" id="meal_desc" class="form-control"></textarea>
                         </div>
                         <div class="mb-1">
                             <label for="mealname">Meal picture</label>
-                            <input type="text" value="meal-pic" class="form-control">
+                            <input type="text" placeholder="link to pic of meal" id="meal_pic" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-green">Add meal</button>
-                    </form>
-                    <h3 class="float-left text-dark">List of food items</h3>
-                    <button class="btn btn-red float-right">Add an item</button>
+                        <div class="center">
+                            <button type="submit" class="btn btn-green">Add meal</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="center-position">
+                    <h3 class="float-left text-dark">List of food items in the menu</h3>
+                    <button class="btn btn-red float-right" onclick="add_menu()">Add a meal item</button>
                     <ul class="l-group clear mt-3" id="food-list">
-                        <li class="l-group-item">
-                            <img src="../../img/fries.jpg" alt="">
-                            <div class="l-item-text">
-                                <p class="li-text">Fries</p>
-                                <p>With a little description beneath it about the toppings</p>
-                                <p class="li-text">$2.99</p>
-                            </div>
-                            <div class="btn-group">
-                                <button class="btn btn-red">Delete</button>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
