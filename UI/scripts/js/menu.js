@@ -9,7 +9,8 @@ let reqInit = {
     'headers': reqHeader
 };
 
-let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
+// let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
+let request = new Request('http://localhost:5000/api/v2/menu', reqInit);
 
 
 let createNode = (element) => document.createElement(element);

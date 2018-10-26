@@ -17,7 +17,8 @@ function create_account(e) {
         })
     }
 
-    const request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/auth/signup', reqInit);
+    // const request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/auth/signup', reqInit);
+    const request = new Request('http://localhost:5000/api/v2/auth/signup', reqInit);
 
     fetch(request)
         .then(res => res.json())
@@ -47,7 +48,7 @@ function create_account(e) {
                 pwd.value = ''
             } else if (json.message == password_err) {
                 password_msg.innerHTML = password_err;
-                password_msg.className = "red-alert"               
+                password_msg.className = "red-alert"
                 pwd.value = ''
             } else {
                 alert(json.message)
@@ -55,5 +56,5 @@ function create_account(e) {
                 return false;
             }
         })
-        .catch(err => console.log(err))    
+        .catch(err => console.log(err))
 }
