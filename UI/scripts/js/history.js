@@ -7,8 +7,7 @@ let reqInit = {
     }
 };
 
-// let request = new Request("https://immense-ocean-82555.herokuapp.com/api/v2/users/orders", reqInit);
-let request = new Request("http://localhost:5000/api/v2/users/orders", reqInit);
+let request = new Request("https://immense-ocean-82555.herokuapp.com/api/v2/users/orders", reqInit);
 
 let createNode = (element) => document.createElement(element);
 let append = (parent, child) => parent.appendChild(child);

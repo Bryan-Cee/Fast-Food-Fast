@@ -11,11 +11,7 @@ function getSpecUser(e) {
 
     let userId = document.getElementById("user_id").value;
 
-    // const userReq = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/users/${userId}`, specInit);
-    const userReq = new Request(
-        `http://localhost:5000/api/v2/users/${userId}`,
-        specInit
-    );
+    const userReq = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/users/${userId}`, specInit);
 
     fetch(userReq)
         .then(res => res.json())

@@ -11,11 +11,7 @@ function makeAdmin(admin, userid) {
         })
     };
 
-    // const userReq = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/users/${userId}`, adminInit);
-    const adminReq = new Request(
-        `http://localhost:5000/api/v2/users/${userid}`,
-        adminInit
-    );
+    const userReq = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/users/${userId}`, adminInit);
 
     fetch(adminReq)
         .then(res => res.json())
@@ -67,8 +63,7 @@ function process(e, status, id) {
         })
     };
 
-    // let acceptReq = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/orders/${order_id}`, acceptInit);
-    let acceptReq = new Request(`http://localhost:5000/api/v2/orders/${order_id}`, acceptInit);
+    let acceptReq = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/orders/${order_id}`, acceptInit);
     fetch(acceptReq)
         .then(res => res.json())
         .then(json => {

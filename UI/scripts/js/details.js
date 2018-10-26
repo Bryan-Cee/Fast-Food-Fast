@@ -11,8 +11,6 @@ getUser.addEventListener("submit", getSpecUser);
 let createNode = element => document.createElement(element);
 let append = (parent, child) => parent.appendChild(child);
 
-// get specific user
-
 (function list() {
     if (localStorage.getItem("user") == "true") {
         let li = createNode("li");
