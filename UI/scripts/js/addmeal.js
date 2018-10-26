@@ -1,71 +1,70 @@
 function checkadmin() {
-    console.log('page loaded');
+    console.log("page loaded");
 }
 
-const food_list = document.getElementById('food-list')
+const food_list = document.getElementById("food-list");
 
 let reqHeader = new Headers({
-    'x-access-token': localStorage.getItem('token')
+    "x-access-token": localStorage.getItem("token")
 });
 
 let reqInit = {
-    'method': 'GET',
-    'headers': reqHeader
+    method: "GET",
+    headers: reqHeader
 };
 
-let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
+// let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
+let request = new Request("http://localhost:5000/api/v2/menu", reqInit);
 
-
-let createNode = (element) => document.createElement(element);
+let createNode = element => document.createElement(element);
 let append = (parent, child) => parent.appendChild(child);
 
 fetch(request)
     .then(res => res.json())
     .then(json => {
-        meals = json.menu
+        meals = json.menu;
 
-        meals.map((meal) => {
+        meals.map(meal => {
             // li
-            let li = createNode('li');
-            li.className = 'l-group-item'
+            let li = createNode("li");
+            li.className = "l-group-item";
 
             // img
-            let img = createNode('img');
+            let img = createNode("img");
             img.src = meal.pic;
-            img.alt = `A picture of ${meal.meal_name}`
+            img.alt = `A picture of ${meal.meal_name}`;
 
             // div-main
-            let first_div = createNode('div');
+            let first_div = createNode("div");
             first_div.className = "w-50";
 
             // P's
-            let mname = createNode('p');
-            mname.className = 'li-text';
+            let mname = createNode("p");
+            mname.className = "li-text";
             mname.innerHTML = meal.meal_name;
 
-            let mdesc = createNode('p');
+            let mdesc = createNode("p");
             mdesc.innerHTML = meal.meal_desc;
 
-            let mprice = createNode('p');
-            mprice.className = 'li-text';
+            let mprice = createNode("p");
+            mprice.className = "li-text";
             mprice.innerHTML = meal.meal_price;
 
             // second_div
-            let second_div = createNode('div');
-            second_div.classList.add('mid-position', 'ml-5p');
+            let second_div = createNode("div");
+            second_div.classList.add("mid-position", "ml-5p");
 
             // input
-            let mid = createNode('input');
+            let mid = createNode("input");
             mid.value = meal.meal_id;
-            mid.id = 'meal_id';
-            mid.hidden = 'True';
+            mid.hidden = "True";
 
             // button
-            let order_now = createNode('button');
-            order_now.className = 'btn btn-red';
-            order_now.innerHTML = 'Remove';
+            let order_now = createNode("button");
+            order_now.className = "btn btn-red";
+            order_now.innerHTML = "Remove";
             order_now.onclick = function () {
-                deletemeal(this);
+                deletemeal(this, meal.meal_id);
             };
 
             append(food_list, li);
@@ -84,61 +83,62 @@ fetch(request)
     })
     .catch(err => console.log(err));
 
-var addmeal = document.getElementById('addmealpopup');
+var addmeal = document.getElementById("addmealpopup");
 
-addmeal.addEventListener('submit', addToMenu);
+addmeal.addEventListener("submit", addToMenu);
 
 function addToMenu(e) {
     e.preventDefault();
 
     let reqInit = {
-        method: 'POST',
+        method: "POST",
         headers: new Headers({
-            'Content-Type': 'application/json',
-            'x-access-token': localStorage.getItem('token')
+            "Content-Type": "application/json",
+            "x-access-token": localStorage.getItem("token")
         }),
         body: JSON.stringify({
-            meal_name: document.getElementById('meal_name').value,
-            meal_desc: document.getElementById('meal_desc').value,
-            meal_price: document.getElementById('meal_price').value,
-            pic: document.getElementById('meal_pic').value
+            meal_name: document.getElementById("meal_name").value,
+            meal_desc: document.getElementById("meal_desc").value,
+            meal_price: document.getElementById("meal_price").value,
+            pic: document.getElementById("meal_pic").value
         })
-    }
+    };
 
-    const req = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
+    // const req = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
+    const req = new Request("http://localhost:5000/api/v2/menu", reqInit);
     fetch(req)
         .then(res => res.json())
         .then(json => {
-            alert(json.message)
+            alert(json.message);
             window.location.reload();
         })
-        .catch(err => console.log(err))
-
+        .catch(err => console.log(err));
 }
 
-function deletemeal(e) {
+function deletemeal(e, meal_id) {
     // Delete the meal item from the menu
     var warning = confirm("Are you sure!");
     if (warning == true) {
         let reqInit = {
-            method: 'DELETE',
+            method: "DELETE",
             headers: new Headers({
-                'Content-Type': 'application/json',
-                'x-access-token': localStorage.getItem('token')
-            }),
-        }
-        let order_id = document.getElementById('meal_id').value;
-        const req = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/menu/${order_id}`, reqInit);
+                "Content-Type": "application/json",
+                "x-access-token": localStorage.getItem("token")
+            })
+        };
+        // const req = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/menu/${meal_id}`, reqInit);
+        const req = new Request(
+            `http://localhost:5000/api/v2/menu/${meal_id}`,
+            reqInit
+        );
         fetch(req)
             .then(res => res.json())
             .then(json => {
-                console.log(json.message);
                 alert(json.message);
                 window.location.reload();
             })
-            .catch(err => console.log(err))
-        e.parentNode.parentNode.style.display = 'none';
-
+            .catch(err => console.log(err));
+        e.parentNode.parentNode.style.display = "none";
     } else {
         window.location.reload();
     }

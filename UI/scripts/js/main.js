@@ -14,7 +14,16 @@ function ordermeal(e) {
 }
 
 var meal_item = document.getElementById('addmealpopup');
-
 function add_menu() {
     meal_item.style.display = 'block';
+}
+
+const getUser = document.getElementById("userForm");
+function getUserForm() {
+    getUser.style.display = "block";
+}
+
+const getOrder = document.getElementById("orderForm");
+function getOrderForm() {
+    getOrder.style.display = "block";
 }

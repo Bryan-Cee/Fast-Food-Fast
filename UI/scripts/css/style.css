@@ -173,7 +173,7 @@ header {
     left: 0;
     position: fixed;
     overflow: auto;
-    display: none;   
+    display: none;
 }
 
 .popup-control {
@@ -365,4 +365,13 @@ header {
 
 .center {
     margin: auto;
+}
+
+.text-large {
+    font-size: xx-large;
+    font-weight: 400;
+}
+
+.text-black {
+    color: #000000;
 }

@@ -16,7 +16,8 @@ function loginfunc(e) {
         }
     };
 
-    let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/auth/login', reqInit);
+    // let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/auth/login', reqInit);
+    let request = new Request('http://localhost:5000/api/v2/auth/login', reqInit);
 
 
     fetch(request)
@@ -31,7 +32,8 @@ function loginfunc(e) {
                     }
                 };
 
-                let reqdata = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/orders/', myInit);
+                // let reqdata = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/orders/', myInit);
+                let reqdata = new Request('http://localhost:5000/api/v2/orders/', myInit);
                 fetch(reqdata)
                     .then(res => res.json())
                     .then(json => {

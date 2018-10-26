@@ -1,3 +1,7 @@
+import { process } from "./modules/getdetails.js";
+
+let order_list = document.getElementById("food-list");
+
 let reqInit = {
     method: "GET",
     headers: new Headers({
@@ -6,10 +10,8 @@ let reqInit = {
     })
 };
 
-let req = new Request("https://immense-ocean-82555.herokuapp.com/api/v2/orders/", reqInit);
-
-
-let order_list = document.getElementById("food-list");
+// let req = new Request("https://immense-ocean-82555.herokuapp.com/api/v2/orders/", reqInit);
+let req = new Request("http://localhost:5000/api/v2/orders/", reqInit);
 
 let createNode = element => document.createElement(element);
 let append = (parent, child) => parent.appendChild(child);
@@ -62,7 +64,6 @@ fetch(req)
                 second_div.className = "mt-1";
 
                 //meal status label
-
                 let labelmealstatus = createNode("label");
                 labelmealstatus.innerHTML = "Order status: ";
 
@@ -92,11 +93,9 @@ fetch(req)
                 orderidp.style.border = "none";
                 orderidp.style.backgroundColor = "rgba(255, 255, 255, 0)";
                 orderidp.readOnly = "True";
-                orderidp.parentNode = createNode("b");
 
                 //third div
                 let third_div = createNode("div");
-                // third_div.className = "mt-1";
 
                 //accept button
                 let acceptbtn = createNode("button");
@@ -156,29 +155,3 @@ fetch(req)
         }
     })
     .catch(err => console.log(err))
-
-function process(e, status, id) {
-    let order_id = id;
-    let acceptInit = {
-        method: "PUT",
-        headers: new Headers({
-            "Content-Type": "application/json",
-            "x-access-token": localStorage.getItem("token")
-        }),
-        body: JSON.stringify({
-            status: status
-        })
-    };
-
-    let acceptReq = new Request(
-        `https://immense-ocean-82555.herokuapp.com/api/v2/orders/${order_id}`,
-        acceptInit
-    );
-    fetch(acceptReq)
-        .then(res => res.json())
-        .then(json => {
-            alert(json.message);
-            window.location.reload();
-        })
-        .catch(err => console.log(err));
-}
