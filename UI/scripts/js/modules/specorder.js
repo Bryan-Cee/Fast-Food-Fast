@@ -10,6 +10,7 @@ function getSpecOrder(e) {
     };
 
     let orderId = document.getElementById("order_id").value;
+
     const userReq = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/orders/${orderId}`, specInit);
 
     fetch(userReq)

@@ -40,6 +40,7 @@ let append = (parent, child) => parent.appendChild(child);
 
         let second_div = createNode("p");
         second_div.className = "ml-5p mid-position";
+        second_div.id = "button-input"
 
         let form = createNode("form");
 
@@ -143,6 +144,7 @@ let append = (parent, child) => parent.appendChild(child);
 
         //third div
         let third_div = createNode("div");
+        third_div.id = "button-input"
 
         //accept button
         let acceptbtn = createNode("button");

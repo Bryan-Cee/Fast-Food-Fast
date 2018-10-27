@@ -95,7 +95,8 @@ fetch(req)
 
                 //third div
                 let third_div = createNode("div");
-
+                third_div.id = "button-input"
+                
                 //accept button
                 let acceptbtn = createNode("button");
                 acceptbtn.className = "btn btn-green mr-1";

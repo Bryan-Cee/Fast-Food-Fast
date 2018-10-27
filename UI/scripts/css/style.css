@@ -375,3 +375,91 @@ header {
 .text-black {
     color: #000000;
 }
+
+/* responsiveness */
+
+@media(max-width:768px) {
+    .row {
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+    }
+
+    #index-text {
+        width: 95%;
+    }
+
+    #display-text {
+        width: 95%;
+        margin: auto;
+    }
+
+    #form-section {
+        width: 95%;
+        margin-top: 1.2em;
+    }
+
+    #login-form button {
+        width: 20%;
+    }
+
+    #spec-list {
+        padding-top: 1.2em;
+        width: 50%;
+        margin: auto;
+    }
+    #food-list{
+        width: 72%;
+        margin: auto;
+    }
+    .l-group-item img {
+        width: 15rem;
+        height: 12rem;
+        border-radius: 0.25rem 0 0 0.25rem;
+    }
+
+    .li-text {
+        margin-bottom: 2px;
+        font-weight: 700;
+    }
+
+    #button-input {
+        margin: 0;
+        padding: 0;
+    }
+
+    #button-input button {
+        width: 100%;
+    }
+
+    .l-group-item {
+        width: 15rem;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: .4rem;
+        background-color: rgba(255, 255, 255, 0.637);
+    }
+
+    .message {
+        font-size: xx-large;
+        background-color: rgba(255, 255, 255, 0.637);
+        border-radius: .375rem;
+        text-align: center;
+        margin: auto;
+    }
+
+    .nav-buttons {
+        display: flex;
+        float: none;
+        margin-top: .2em;
+    }
+
+    .nav-buttons a {
+        margin-right: 2px;
+    }
+
+    #addmeal-button{
+        float: none;
+        width: 100%;
+    }
+}

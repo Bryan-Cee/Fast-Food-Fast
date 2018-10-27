@@ -52,6 +52,7 @@ fetch(request)
             // second_div
             let second_div = createNode("div");
             second_div.classList.add("mid-position", "ml-5p");
+            second_div.id = "button-input"
 
             // input
             let mid = createNode("input");
