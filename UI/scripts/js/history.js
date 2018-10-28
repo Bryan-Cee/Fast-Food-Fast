@@ -31,7 +31,7 @@ fetch(request)
 
                 // first-div
                 let first_div = createNode('div');
-                first_div.className = "l-item-text mt-1";
+                first_div.className = "l-item-text mt-1 menu-item";
 
                 // mealname-p
                 let mealnamep = createNode('p');

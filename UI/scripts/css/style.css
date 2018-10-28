@@ -153,7 +153,7 @@ header {
 
 .form-control {
     display: block;
-    width: 95%;
+    width: 100%;
     padding: 0.375rem 0.5rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -161,6 +161,10 @@ header {
     background-color: #fff;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
+}
+
+.form-group {
+    width: 95%;
 }
 
 .popup {
@@ -379,6 +383,7 @@ header {
 /* responsiveness */
 
 @media(max-width:768px) {
+    
     .row {
         flex-direction: column;
         width: 90%;
@@ -408,10 +413,12 @@ header {
         width: 50%;
         margin: auto;
     }
+    
     #food-list{
         width: 72%;
         margin: auto;
     }
+
     .l-group-item img {
         width: 15rem;
         height: 12rem;
@@ -460,6 +467,85 @@ header {
 
     #addmeal-button{
         float: none;
+        width: 100%;
+    }
+
+    .form-group{
+        width: 94%;
+    }
+}
+
+@media(max-width: 576px) {
+    .form-group {
+        width: 92%;
+    }
+
+    #display-text>p {
+        display: none;
+    }
+
+    #spec-list, #food-list{
+        width: 100%;
+    }
+    
+    .l-group-item img {
+        width: 13rem;
+        height: 10rem;
+        border-radius: 0.25rem 0 0 0.25rem;
+    }
+
+    .l-group-item {
+        width: 13rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: .4rem;
+        background-color: rgba(255, 255, 255, 0.637);
+    }
+    
+    body>section>div>div>button.btn.btn-green.float-left.mt-1{
+        float: none;
+        width: 100%;
+    }
+
+    body>section>div>div>button.btn.btn-red.float-right.mt-1{
+        float: none;
+        width: 100%;
+    }
+
+    #orderForm, #userForm{
+        width: 80%;
+    }
+
+    #order_id{
+        width: 100%
+    }
+
+    .nav-buttons{
+        display: flex;
+        flex-direction:column; 
+        float: none;
+    }
+
+    .nav-buttons > a {
+        margin-bottom: .2em;
+    }
+
+    .inventory,.details {
+        width: 90%;
+    }
+
+    #addmealpopup{
+        width: 80%;
+        margin: auto;
+    }
+
+    #order-popup{
+        width: 80%;
+        margin: auto;
+    }
+
+    .menu-item{
         width: 100%;
     }
 }

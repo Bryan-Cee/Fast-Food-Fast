@@ -11,7 +11,7 @@ function makeAdmin(admin, userid) {
         })
     };
 
-    const userReq = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/users/${userId}`, adminInit);
+    const adminReq = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/users/${userid}`, adminInit);
 
     fetch(adminReq)
         .then(res => res.json())

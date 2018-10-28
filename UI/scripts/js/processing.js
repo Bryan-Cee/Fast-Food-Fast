@@ -36,7 +36,7 @@ fetch(req)
 
                 // first-div
                 let first_div = createNode("div");
-                first_div.className = "mr-1 mt-1";
+                first_div.className = "mr-1 mt-1 menu-item";
 
                 // mealname-p
                 let mealnamep = createNode("p");
