@@ -8,7 +8,8 @@
     <title>Order Meal</title>
     <link rel="stylesheet" href="../../scripts/css/style.css">
     <script async src="../../scripts/js/history.js"></script>
-    <script async src="../../scripts/js/logout.js"></script>
+    <script async type="module" src="../../scripts/js/logout.js"></script>
+    
 </head>
 
 <body class="bg-pic">
@@ -16,7 +17,7 @@
         <div id="logo" class="container">
             <h3>Fast-Food-Fast</h3>
             <small><i>Fast food delivery real quick</i></small>
-            <div class=" float-right">
+            <div class=" float-right nav-buttons">
                 <a href="../user/menu.html" class="btn btn-red">Order Meal</a>
                 <a href="../../../home.html" class="btn btn-red log-out" id="log-out">Log-out</a>
             </div>
@@ -25,12 +26,10 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="w-75">
-                    <div class="">
-                        <ul class="l-group clear" id="food-list">
-                            
-                        </ul>
-                    </div>
+                <div class="w-75 center">
+                    <ul class="l-group clear" id="food-list">
+
+                    </ul>
                 </div>
             </div>
         </div>

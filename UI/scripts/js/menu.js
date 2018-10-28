@@ -33,7 +33,7 @@ fetch(request)
 
                 // div-main
                 let first_div = createNode('div');
-                first_div.className = "w-50";
+                first_div.className = "w-50 menu-item";
 
                 // P's
                 let mname = createNode('p');
@@ -50,6 +50,7 @@ fetch(request)
                 // second_div
                 let second_div = createNode('div');
                 second_div.classList.add('mid-position', 'ml-5p');
+                second_div.id = "button-input"
 
                 // input
                 let mid = createNode('input');

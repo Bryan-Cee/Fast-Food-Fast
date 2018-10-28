@@ -18,9 +18,6 @@ let append = (parent, child) => parent.appendChild(child);
 fetch(req)
     .then(res => res.json())
     .then(json => {
-        if (json.status == "failed") {
-            window.location.href = "../user/menu.html";
-        }
         if (json.Orders) {
             let orders = json.Orders;
 
@@ -36,7 +33,7 @@ fetch(req)
 
                 // first-div
                 let first_div = createNode("div");
-                first_div.className = "mr-1 mt-1";
+                first_div.className = "mr-1 mt-1 menu-item";
 
                 // mealname-p
                 let mealnamep = createNode("p");
@@ -95,7 +92,8 @@ fetch(req)
 
                 //third div
                 let third_div = createNode("div");
-
+                third_div.id = "button-input"
+                
                 //accept button
                 let acceptbtn = createNode("button");
                 acceptbtn.className = "btn btn-green mr-1";

@@ -18,7 +18,6 @@ function loginfunc(e) {
 
     let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/auth/login', reqInit);
 
-
     fetch(request)
         .then(req => req.json())
         .then(res => {
@@ -32,6 +31,7 @@ function loginfunc(e) {
                 };
 
                 let reqdata = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/orders/', myInit);
+
                 fetch(reqdata)
                     .then(res => res.json())
                     .then(json => {

@@ -7,28 +7,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fast-Food-Fast</title>
     <link rel="stylesheet" href="../../scripts/css/style.css">
+    <script type="module" src="../../scripts/js/auth.js"></script>
     <script type="module" src="../../scripts/js/modules/specorder.js"></script>
     <script type="module" src="../../scripts/js/modules/specuser.js"></script>
     <script async src="../../scripts/js/main.js"></script>
     <script async type="module" src="../../scripts/js/details.js"></script>
-    <script async src="../../scripts/js/logout.js"></script>
+    <script async type="module" src="../../scripts/js/logout.js"></script>
 </head>
 
-<body class="bg-pic">
+<body class="bg-pic" onloadstart="check()">
     <header>
         <div id="logo" class="container">
             <h3>Fast-Food-Fast</h3>
             <small><i>Fast food delivery real quick</i></small>
-            <div class=" float-right">
+            <div class=" float-right nav-buttons">
                 <a href="../admin/inventory.html" class="btn btn-red">View meals</a>
                 <a href="../admin/orders.html" class="btn btn-red">See orders</a>
                 <a href="../../../home.html" class="btn btn-red" id="log-out">Log-out</a>
             </div>
         </div>
     </header>
+    <div class="overlayer"></div>
+    <div class="alert" id="alert">
+        <div class="alertheader">
+            <p class="li-text">Warning</p>
+        </div>
+        <div class="alertbody">
+            <div class="alertmessage" id="alertmessage">
+
+            </div>
+        </div>
+        <div class="alertfooter">
+            <button class="btn btn-red" onclick="ok()">OK</button>
+        </div>
+    </div>  
     <section>
         <div class="container">
-            <div class="w-75 center">
+            <div class="w-75 center details">
                 <p class="li-text form center">Click on the button to get the specific item you need</p>
                 <button class="btn btn-green float-left mt-1" onclick="getUserForm()">Get Specific user</button>
                 <button class="btn btn-red float-right mt-1" onclick="getOrderForm()">Get Specific order</button>
@@ -38,7 +53,7 @@
                             <span class="popup-close" onclick="closepopup(this)">CLOSE</span>
                         </div>
                         <div class="popup-body">
-                            <div class="mb-1">
+                            <div class="mb-1 form-group">
                                 <label for="user_id">User ID</label>
                                 <input type="number" min="0" placeholder="User ID" id="user_id" class="form-control"
                                     required>
@@ -53,7 +68,7 @@
                             <span class="popup-close" onclick="closepopup(this)">CLOSE</span>
                         </div>
                         <div class="popup-body">
-                            <div class="mb-1">
+                            <div class="mb-1 form-group">
                                 <label for="order_id">Order ID</label>
                                 <input type="number" min="0" placeholder="Order ID" id="order_id" class="form-control"
                                     required>
