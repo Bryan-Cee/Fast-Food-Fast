@@ -7,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fast-Food-Fast</title>
     <link rel="stylesheet" href="../../scripts/css/style.css">
-    <script type="module" src="../../scripts/js/modules/getdetails.js"></script>
+    <script type="module" src="../../scripts/js/auth.js"></script>
     <script src="../../scripts/js/main.js"></script>
+    <script type="module" src="../../scripts/js/modules/getdetails.js"></script>
     <script type="module" src="../../scripts/js/processing.js"></script>
-    <script async src="../../scripts/js/logout.js"></script>
+    <script async type="module" src="../../scripts/js/logout.js"></script>
 </head>
 
-<body class="bg-pic">
+<body class="bg-pic" onloadstart="check()">
     <header>
         <div id="logo" class="container">
             <h3>Fast-Food-Fast</h3>
@@ -25,12 +26,26 @@
             </div>
         </div>
     </header>
+    <div class="overlayer"></div>
+    <div class="alert" id="alert">
+        <div class="alertheader">
+            <p class="li-text">Warning</p>
+        </div>
+        <div class="alertbody">
+            <div class="alertmessage" id="alertmessage">
+
+            </div>
+        </div>
+        <div class="alertfooter">
+            <button class="btn btn-red" onclick="ok()">OK</button>
+        </div>
+    </div>
     <section>
         <div class="container">
             <div class="row">
                 <div class="center">
                     <ul class="l-group" id="food-list">
-                        
+
                     </ul>
                 </div>
             </div>

@@ -18,9 +18,6 @@ let append = (parent, child) => parent.appendChild(child);
 fetch(req)
     .then(res => res.json())
     .then(json => {
-        if (json.status == "failed") {
-            window.location.href = "../user/menu.html";
-        }
         if (json.Orders) {
             let orders = json.Orders;
 

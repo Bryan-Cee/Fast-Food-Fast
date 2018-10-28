@@ -29,6 +29,64 @@ header {
     opacity: .6;
 }
 
+.overlayer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #4d505273;
+    height: 100%;
+    width: 100%;
+}
+
+.alert {
+    display: none;
+    width: 30%;
+    height:  150px;
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    z-index: 3;
+}
+
+.alertheader {
+    background-color: darkslategray;
+    height: 25%;
+    padding: 10px 0 0 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+.alertbody {
+    background-color: #ffffff;
+    height: 50%;
+    color: #000000;
+    padding-left: 10px;
+}
+
+.alertmessage {
+    width: 90%;
+    margin: auto;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+.alertfooter {
+    background-color: darkslategray;
+    height: 30%;
+    border-radius: 0 0 8px 8px;
+    padding: 4px;
+}
+
+.alertfooter>button {
+    float: right; 
+}
+
 .red-alert {
     font-weight: bold;
     color: red;

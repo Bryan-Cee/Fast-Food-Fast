@@ -7,12 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fast-Food-Fast</title>
     <link rel="stylesheet" href="../../scripts/css/style.css">
+    <script type="module" src="../../scripts/js/auth.js"></script>
     <script async src="../../scripts/js/addmeal.js"></script>
     <script async src="../../scripts/js/main.js"></script>
-    <script async src="../../scripts/js/logout.js"></script>
+    <script async type="module" src="../../scripts/js/logout.js"></script>
 </head>
 
-<body class="bg-pic" onload="checkadmin()">
+<body class="bg-pic" onloadstart="check()">
     <header>
         <div id="logo" class="container">
             <h3>Fast-Food-Fast</h3>
@@ -24,6 +25,20 @@
             </div>
         </div>
     </header>
+    <div class="overlayer"></div>
+    <div class="alert" id="alert">
+        <div class="alertheader">
+            <p class="li-text">Warning</p>
+        </div>
+        <div class="alertbody">
+            <div class="alertmessage" id="alertmessage">
+
+            </div>
+        </div>
+        <div class="alertfooter">
+            <button class="btn btn-red" onclick="ok()">OK</button>
+        </div>
+    </div>  
     <section>
         <div class="mt-1">
             <div class="row">
@@ -56,7 +71,8 @@
                 </form>
                 <div class="w-50 center inventory">
                     <h3 class="float-left clear text-dark">List of food items in the menu</h3>
-                    <button class="btn btn-red float-right mb-1" id="addmeal-button" onclick="add_menu()">Add a meal item</button>
+                    <button class="btn btn-red float-right mb-1" id="addmeal-button" onclick="add_menu()">Add a meal
+                        item</button>
                     <ul class="l-group clear mt-3" id="food-list">
                     </ul>
                 </div>
