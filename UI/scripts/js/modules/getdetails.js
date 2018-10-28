@@ -87,8 +87,6 @@ function Alert(message) {
     }
 }
 
-
-
 export {
     process,
     makeAdmin,

@@ -1,3 +1,16 @@
+let alertbox = document.getElementById("alert")
+let alertmessage = document.getElementById("alertmessage")
+let alertOk = document.getElementById('ok')
+
+function Success(message) {
+    alertbox.style.display = "block";
+    alertbox.previousElementSibling.style.display = "block"
+    alertmessage.innerHTML = message;
+    alertOk.onclick = (e) => {
+        e.target.parentNode.parentNode.style.display = 'none';
+        window.location.href = "../../../home.html";
+    }
+}
 const create_accnt = document.getElementById('create_account_form')
 
 create_accnt.addEventListener('submit', create_account);
@@ -24,8 +37,7 @@ function create_account(e) {
         .then(json => {
             if (json.status == 'success') {
                 create_accnt.reset();
-                alert(json.message)
-                window.location.href = '../../../home.html'
+                Success(json.message)
                 return false;
             }
 
