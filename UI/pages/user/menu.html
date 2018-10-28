@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="../../scripts/css/style.css">
     <script async src="../../scripts/js/main.js"></script>
     <script async src="../../scripts/js/menu.js"></script>
-    <script async src="../../scripts/js/order.js"></script>
+    <script async type="module" src="../../scripts/js/order.js"></script>
+    <script async type="module" src="../../scripts/js/modules/getdetails.js"></script>
     <script async type="module" src="../../scripts/js/logout.js"></script>
 </head>
 
@@ -24,6 +25,20 @@
             </div>
         </div>
     </header>
+    <div class="overlayer" id="overlayer"></div>
+    <div class="alert" id="alert">
+        <div class="alertheader">
+            <p class="li-text">Warning</p>
+        </div>
+        <div class="alertbody">
+            <div class="alertmessage" id="alertmessage">
+
+            </div>
+        </div>
+        <div class="alertfooter">
+            <button class="btn btn-red" id="ok">OK</button>
+        </div>
+    </div>
     <section>
         <div class="container">
             <div class="row">

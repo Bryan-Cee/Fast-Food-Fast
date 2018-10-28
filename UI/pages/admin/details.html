@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fast-Food-Fast</title>
+    <script async src="../../scripts/js/auth.js"></script>
     <link rel="stylesheet" href="../../scripts/css/style.css">
-    <script type="module" src="../../scripts/js/auth.js"></script>
     <script type="module" src="../../scripts/js/modules/specorder.js"></script>
     <script type="module" src="../../scripts/js/modules/specuser.js"></script>
     <script async src="../../scripts/js/main.js"></script>
@@ -15,7 +15,7 @@
     <script async type="module" src="../../scripts/js/logout.js"></script>
 </head>
 
-<body class="bg-pic" onloadstart="check()">
+<body class="bg-pic">
     <header>
         <div id="logo" class="container">
             <h3>Fast-Food-Fast</h3>
@@ -27,7 +27,7 @@
             </div>
         </div>
     </header>
-    <div class="overlayer"></div>
+    <div class="overlayer" id="overlayer"></div>
     <div class="alert" id="alert">
         <div class="alertheader">
             <p class="li-text">Warning</p>
@@ -38,47 +38,45 @@
             </div>
         </div>
         <div class="alertfooter">
-            <button class="btn btn-red" onclick="ok()">OK</button>
+            <button class="btn btn-red" id='ok'>OK</button>
         </div>
-    </div>  
+    </div>
     <section>
         <div class="container">
             <div class="w-75 center details">
+                <form action="" method="get" class="add-meal" id="userForm">
+                    <div class="popup-header">
+                        <span class="popup-close" onclick="closepopup(this)">CLOSE</span>
+                    </div>
+                    <div class="popup-body">
+                        <div class="mb-1 form-group">
+                            <label for="user_id">User ID</label>
+                            <input type="number" min="0" placeholder="User ID" id="user_id" class="form-control"
+                                required>
+                        </div>
+                        <div class="center">
+                            <button type="submit" class="btn btn-red">Get User</button>
+                        </div>
+                    </div>
+                </form>
+                <form action="" method="get" class="add-meal" id="orderForm">
+                    <div class="popup-header">
+                        <span class="popup-close" onclick="closepopup(this)">CLOSE</span>
+                    </div>
+                    <div class="popup-body">
+                        <div class="mb-1 form-group">
+                            <label for="order_id">Order ID</label>
+                            <input type="number" min="0" placeholder="Order ID" id="order_id" class="form-control"
+                                required>
+                        </div>
+                        <div class="center">
+                            <button type="submit" class="btn btn-red">Get Order</button>
+                        </div>
+                    </div>
+                </form>
                 <p class="li-text form center">Click on the button to get the specific item you need</p>
                 <button class="btn btn-green float-left mt-1" onclick="getUserForm()">Get Specific user</button>
                 <button class="btn btn-red float-right mt-1" onclick="getOrderForm()">Get Specific order</button>
-                <div class="clear">
-                    <form action="" method="get" class="add-meal" id="userForm">
-                        <div class="popup-header">
-                            <span class="popup-close" onclick="closepopup(this)">CLOSE</span>
-                        </div>
-                        <div class="popup-body">
-                            <div class="mb-1 form-group">
-                                <label for="user_id">User ID</label>
-                                <input type="number" min="0" placeholder="User ID" id="user_id" class="form-control"
-                                    required>
-                            </div>
-                            <div class="center">
-                                <button type="submit" class="btn btn-red">Get User</button>
-                            </div>
-                        </div>
-                    </form>
-                    <form action="" method="get" class="add-meal" id="orderForm">
-                        <div class="popup-header">
-                            <span class="popup-close" onclick="closepopup(this)">CLOSE</span>
-                        </div>
-                        <div class="popup-body">
-                            <div class="mb-1 form-group">
-                                <label for="order_id">Order ID</label>
-                                <input type="number" min="0" placeholder="Order ID" id="order_id" class="form-control"
-                                    required>
-                            </div>
-                            <div class="center">
-                                <button type="submit" class="btn btn-red">Get Order</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
                 <ul class="l-group clear " id="spec-list">
 
                 </ul>

@@ -1,7 +1,9 @@
 let alertbox = document.getElementById("alert")
 let alertmessage = document.getElementById("alertmessage")
+let alertOk = document.getElementById('ok');
 
-function CheckAdmin() {
+(function CheckAdmin() {
+
     let reqInit = {
         method: "GET",
         headers: new Headers({
@@ -15,19 +17,19 @@ function CheckAdmin() {
     fetch(req)
         .then(res => res.json())
         .then(json => {
-            if (json.status == "failed") {
+            if (json.status == 'failed') {
+                console.log(json.message)
                 alertbox.style.display = "block";
                 alertbox.previousElementSibling.style.display = "block"
                 alertmessage.innerHTML = json.message;
-                console.log("this page loaded")
+                alertOk.onclick = () => {
+                    if (json.status == 'failed') {
+                        window.location.href = '../user/menu.html';
+                    } else {
+                        window.location.reload();
+                    }
+                }
             }
         })
-}
-
-
-
-function ok() {
-    alertbox.style.display = "none";
-    alertbox.previousElementSibling.style.display = "none"
-    window.location.href = "../user/menu.html"
-}
+    .catch(err => console.log(err))
+})();

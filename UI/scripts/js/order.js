@@ -1,3 +1,5 @@
+import { Alert } from "./modules/getdetails.js";
+
 const order_meal = document.getElementById('order-popup')
 
 order_meal.addEventListener('submit', order);
@@ -26,15 +28,15 @@ function order(e) {
         .then(res => res.json())
         .then(json => {
             if (json.status == 'success') {
-                alert(json.message);
                 document.getElementById('order-popup').style.display = 'none';
+                Alert(json.message)
                 return false;
             } else if (json.message == 'Token has expired Please login again') {
                 alert(json.message);
                 window.location.href = '../../../home.html';
             } else {
-                alert(json.message);
             }
+            Alert(json.message)
         })
 
 }

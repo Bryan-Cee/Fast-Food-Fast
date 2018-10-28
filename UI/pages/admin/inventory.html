@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="module" src="../../scripts/js/auth.js"></script>
     <title>Fast-Food-Fast</title>
     <link rel="stylesheet" href="../../scripts/css/style.css">
-    <script type="module" src="../../scripts/js/auth.js"></script>
-    <script async src="../../scripts/js/addmeal.js"></script>
+    <script async type="module" src="../../scripts/js/modules/getdetails.js"></script>
+    <script async type="module" src="../../scripts/js/addmeal.js"></script>
     <script async src="../../scripts/js/main.js"></script>
     <script async type="module" src="../../scripts/js/logout.js"></script>
 </head>
 
-<body class="bg-pic" onloadstart="check()">
+<body class="bg-pic">
     <header>
         <div id="logo" class="container">
             <h3>Fast-Food-Fast</h3>
@@ -25,7 +26,7 @@
             </div>
         </div>
     </header>
-    <div class="overlayer"></div>
+    <div class="overlayer" id="overlayer"></div>
     <div class="alert" id="alert">
         <div class="alertheader">
             <p class="li-text">Warning</p>
@@ -36,39 +37,38 @@
             </div>
         </div>
         <div class="alertfooter">
-            <button class="btn btn-red" onclick="ok()">OK</button>
+            <button class="btn btn-red" id="ok">OK</button>
         </div>
-    </div>  
+    </div>
+    <form action="" method="post" id="addmealpopup" class="add-meal">
+        <div class="popup-header">
+            <span class="popup-close" onclick="closepopup(this)">CLOSE</span>
+        </div>
+        <div class="popup-body">
+            <div class="mb-1 form-group">
+                <label for="mealname">Meal name</label>
+                <input type="text" placeholder="meal-name" id="meal_name" class="form-control" required>
+            </div>
+            <div class="mb-1 form-group">
+                <label for="mealname">Meal price</label>
+                <input type="number" step="0.01" placeholder="meal-price" id="meal_price" class="form-control" required>
+            </div>
+            <div class="mb-1 form-group">
+                <label for="mealname">Meal description</label>
+                <textarea type="text" placeholder="meal-desc" id="meal_desc" class="form-control"></textarea>
+            </div>
+            <div class="mb-1 form-group">
+                <label for="mealname">Meal picture</label>
+                <input type="text" placeholder="link to pic of meal" id="meal_pic" class="form-control">
+            </div>
+            <div class="center">
+                <button type="submit" class="btn btn-green">Add meal</button>
+            </div>
+        </div>
+    </form>
     <section>
         <div class="mt-1">
             <div class="row">
-                <form action="" method="post" id="addmealpopup" class="add-meal">
-                    <div class="popup-header">
-                        <span class="popup-close" onclick="closepopup(this)">CLOSE</span>
-                    </div>
-                    <div class="popup-body">
-                        <div class="mb-1 form-group">
-                            <label for="mealname">Meal name</label>
-                            <input type="text" placeholder="meal-name" id="meal_name" class="form-control" required>
-                        </div>
-                        <div class="mb-1 form-group">
-                            <label for="mealname">Meal price</label>
-                            <input type="number" step="0.01" placeholder="meal-price" id="meal_price" class="form-control"
-                                required>
-                        </div>
-                        <div class="mb-1 form-group">
-                            <label for="mealname">Meal description</label>
-                            <textarea type="text" placeholder="meal-desc" id="meal_desc" class="form-control"></textarea>
-                        </div>
-                        <div class="mb-1 form-group">
-                            <label for="mealname">Meal picture</label>
-                            <input type="text" placeholder="link to pic of meal" id="meal_pic" class="form-control">
-                        </div>
-                        <div class="center">
-                            <button type="submit" class="btn btn-green">Add meal</button>
-                        </div>
-                    </div>
-                </form>
                 <div class="w-50 center inventory">
                     <h3 class="float-left clear text-dark">List of food items in the menu</h3>
                     <button class="btn btn-red float-right mb-1" id="addmeal-button" onclick="add_menu()">Add a meal

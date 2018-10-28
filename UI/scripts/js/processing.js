@@ -1,4 +1,4 @@
-import { process } from "./modules/getdetails.js";
+import { process, Alert } from "./modules/getdetails.js";
 
 let order_list = document.getElementById("food-list");
 
@@ -148,7 +148,7 @@ fetch(req)
                 }
             });
         } else {
-            console.log(json.message)
+            Alert(json.message, json.status)
         }
     })
     .catch(err => console.log(err))

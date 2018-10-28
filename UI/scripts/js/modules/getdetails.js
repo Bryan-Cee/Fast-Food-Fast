@@ -16,7 +16,7 @@ function makeAdmin(admin, userid) {
     fetch(adminReq)
         .then(res => res.json())
         .then(json => {
-            alert(json.message);
+            Alert(json.message);
             clearUserDetails();
             window.location.reload();
         })
@@ -67,11 +67,32 @@ function process(e, status, id) {
     fetch(acceptReq)
         .then(res => res.json())
         .then(json => {
-            alert(json.message);
+            Alert(json.message)
             clearOrderDetails();
-            window.location.reload();
         })
         .catch(err => console.log(err));
 }
 
-export { process, makeAdmin, clearOrderDetails, clearUserDetails }
+let alertbox = document.getElementById("alert")
+let alertmessage = document.getElementById("alertmessage")
+let alertOk = document.getElementById('ok')
+
+function Alert(message) {
+    alertbox.style.display = "block";
+    alertbox.previousElementSibling.style.display = "block"
+    alertmessage.innerHTML = message;
+    alertOk.onclick = (e) => {
+        e.target.parentNode.parentNode.style.display = 'none';
+        window.location.reload();
+    }
+}
+
+
+
+export {
+    process,
+    makeAdmin,
+    clearOrderDetails,
+    clearUserDetails,
+    Alert
+}

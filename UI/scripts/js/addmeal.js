@@ -1,7 +1,4 @@
-function checkadmin() {
-    console.log("page loaded");
-}
-
+import { Alert } from "./modules/getdetails.js";
 const food_list = document.getElementById("food-list");
 
 let reqHeader = new Headers({
@@ -19,9 +16,10 @@ let createNode = element => document.createElement(element);
 let append = (parent, child) => parent.appendChild(child);
 
 fetch(request)
-    .then(res => res.json())
+.then(res => res.json())
     .then(json => {
-        meals = json.menu;
+        console.log(json.menu)
+        let meals = json.menu;
 
         meals.map(meal => {
             // li
@@ -108,8 +106,8 @@ function addToMenu(e) {
     fetch(req)
         .then(res => res.json())
         .then(json => {
-            alert(json.message);
-            window.location.reload();
+            addmeal.style.display = 'none';
+            Alert(json.message);
         })
         .catch(err => console.log(err));
 }
@@ -130,8 +128,8 @@ function deletemeal(e, meal_id) {
         fetch(req)
             .then(res => res.json())
             .then(json => {
-                alert(json.message);
-                window.location.reload();
+                console.log(json.message)
+                Alert(json.message);
             })
             .catch(err => console.log(err));
         e.parentNode.parentNode.style.display = "none";
