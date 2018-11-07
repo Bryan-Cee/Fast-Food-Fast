@@ -201,7 +201,7 @@ let append = (parent, child) => parent.appendChild(child);
         }
     } else {
         let message = createNode("p");
-        message.className = "text-large";
+        message.className = "message text-black";
         message.innerHTML = localStorage.getItem("message");
         append(spec_list, message);
     }

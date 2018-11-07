@@ -8,6 +8,6 @@ function logmeout() {
     clearOrderDetails();
     clearUserDetails();
     localStorage.removeItem('token');
-    localStorage.removeItem("notadmin")
+    localStorage.removeItem("message")
     window.location.href = "../../home.html";
 }

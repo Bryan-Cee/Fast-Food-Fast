@@ -1,3 +1,6 @@
+import {
+    Alert
+} from "./modules/getdetails.js";
 const history_list = document.getElementById('food-list');
 
 let reqInit = {
@@ -7,7 +10,7 @@ let reqInit = {
     }
 };
 
-let request = new Request("https://immense-ocean-82555.herokuapp.com/api/v2/users/orders", reqInit);
+let request = new Request("http://localhost:5000/api/v2/users/orders", reqInit);
 
 let createNode = (element) => document.createElement(element);
 let append = (parent, child) => parent.appendChild(child);
@@ -15,14 +18,13 @@ let append = (parent, child) => parent.appendChild(child);
 fetch(request)
     .then(res => res.json())
     .then(json => {
-        console.log(json.history)
         if (json.history) {
             let order_history = json.history
 
             order_history.map((meal) => {
                 // li
                 let li = createNode('li');
-                li.className = "l-group-item mt-1";
+                li.className = "l-group-item";
 
                 // img
                 let img = createNode('img');
@@ -80,13 +82,13 @@ fetch(request)
             })
         } else {
             if (json.message == "Please login") {
-                window.location.href = "../../../home.html";
+                Alert(json.message)
+                window.location.href = '../../../home.html'
             }
-            console.log(json.message);
-            let response = createNode('div');
-            response.className = 'message';
-            response.innerHTML = json.message;
-            append(history_list, response);
+            let messageAlert = createNode('div');
+            messageAlert.className = "message";
+            messageAlert.innerHTML = json.message;
+            append(history_list, messageAlert)
         }
     })
     .catch(err => console.log(err))

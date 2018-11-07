@@ -30,7 +30,7 @@ function create_account(e) {
         })
     }
 
-    const request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/auth/signup', reqInit);
+    const request = new Request('http://localhost:5000/api/v2/auth/signup', reqInit);
 
     fetch(request)
         .then(res => res.json())
@@ -42,28 +42,33 @@ function create_account(e) {
             }
 
             let name_msg = document.getElementById('name_msg');
-            let name_err = "Enter only alphabetic characters for your username"
+            let name_err = "Enter only alphabetic characters for your username";
+
             let email_msg = document.getElementById('email_msg');
-            let email_err = "Enter the correct format of the email e.g.johndoe@mail.com"
+            let email_err = "Enter the correct format of the email e.g.johndoe@mail.com";
+            let email_conflict_err = "The email has already been registered, use another";
+
             let password_msg = document.getElementById('password_msg');
-            let password_err = "Enter a password longer than 6 characters"
+            let password_err = "Enter a password longer than 6 characters";
+            let password_len_err = "Password must have atleast one lowercase one upper case and one digit";
+                
             let pwd = document.getElementById('password');
 
             if (json.message == name_err) {
                 name_msg.innerHTML = name_err;
                 name_msg.className = "red-alert"
                 pwd.value = ''
-            } else if (json.message == email_err) {
-                email_msg.innerHTML = email_err;
+            } else if (json.message == email_err || json.message == email_conflict_err) {
+                email_msg.innerHTML = json.message;
                 email_msg.className = "red-alert"
                 pwd.value = ''
-            } else if (json.message == password_err) {
-                password_msg.innerHTML = password_err;
+            } else if (json.message == password_err || json.message == password_len_err) {
+                password_msg.innerHTML = json.message;
                 password_msg.className = "red-alert"
                 pwd.value = ''
             } else {
                 alert(json.message)
-                create_accnt.reset();
+                pwd.value = '';
                 return false;
             }
         })

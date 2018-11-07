@@ -9,7 +9,7 @@ let reqInit = {
     'headers': reqHeader
 };
 
-let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
+let request = new Request('http://localhost:5000/api/v2/menu', reqInit);
 
 
 let createNode = (element) => document.createElement(element);
@@ -81,11 +81,7 @@ fetch(request)
             if (json.message == "Please login") {
                 window.location.href = "../../../home.html";
             }
-            console.log(json.message);
-            let response = createNode('div');
-            response.className = 'message';
-            response.innerHTML = json.message;
-
+            
             append(meal_list, response);
         }
 

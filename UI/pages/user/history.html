@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Order Meal</title>
     <link rel="stylesheet" href="../../scripts/css/style.css">
-    <script async src="../../scripts/js/history.js"></script>
+    <script async type="module" src="../../scripts/js/modules/getdetails.js"></script>
+    <script async type="module" src="../../scripts/js/history.js"></script>
     <script async type="module" src="../../scripts/js/logout.js"></script>
 
 </head>
@@ -23,7 +24,20 @@
             </div>
         </div>
     </header>
+    <div class="overlayer" id="overlayer"></div>
+    <div class="alert" id="alert">
+        <div class="alertheader">
+            <p class="li-text">Warning</p>
+        </div>
+        <div class="alertbody">
+            <div class="alertmessage" id="alertmessage">
 
+            </div>
+        </div>
+        <div class="alertfooter">
+            <button class="btn btn-red" id="ok">OK</button>
+        </div>
+    </div>
     <section>
         <div class="container">
             <div class="row">

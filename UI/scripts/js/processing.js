@@ -10,7 +10,7 @@ let reqInit = {
     })
 };
 
-let req = new Request("https://immense-ocean-82555.herokuapp.com/api/v2/orders/", reqInit);
+let req = new Request("http://localhost:5000/api/v2/orders/", reqInit);
 
 let createNode = element => document.createElement(element);
 let append = (parent, child) => parent.appendChild(child);
@@ -20,7 +20,6 @@ fetch(req)
     .then(json => {
         if (json.Orders) {
             let orders = json.Orders;
-
             orders.map(meal => {
                 // li
                 let li = createNode("li");
@@ -148,7 +147,10 @@ fetch(req)
                 }
             });
         } else {
-            Alert(json.message, json.status)
+            let messageAlert = createNode('div');
+            messageAlert.className = "message";
+            messageAlert.innerHTML = json.message;
+            append(order_list, messageAlert)
         }
     })
     .catch(err => console.log(err))

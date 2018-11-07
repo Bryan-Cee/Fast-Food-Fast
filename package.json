@@ -1,0 +1,23 @@
+{
+  "name": "fast-food-fast",
+  "version": "1.0.0",
+  "description": "Fast-Food-Fast is a food delivery service app for a restaurant.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bryan-Cee/Fast-Food-Fast.git"
+  },
+  "author": "Bryan Cee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bryan-Cee/Fast-Food-Fast/issues"
+  },
+  "homepage": "https://github.com/Bryan-Cee/Fast-Food-Fast#readme",
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "puppeteer": "^1.9.0"
+  }
+}
