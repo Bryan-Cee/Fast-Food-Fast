@@ -1,3 +1,16 @@
+let header = document.getElementById('snap')
+let snap_position = header.offsetTop;
+window.onscroll = function () {
+    snap()
+}
+
+function snap() {
+    if (window.pageYOffset > snap_position + 20) {
+        header.classList.add("fixed-header");
+    } else {
+        header.classList.remove("fixed-header");
+    }
+}
 function closepopup(e) {
     var parent = e.parentNode;
     parent.parentNode.style.display = 'none';
@@ -35,5 +48,3 @@ function getOrderForm() {
     getOrder.style.display = "block";
     overlayer.style.display = "block";
 }
-
-

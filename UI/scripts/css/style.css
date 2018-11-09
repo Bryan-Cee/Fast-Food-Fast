@@ -29,6 +29,13 @@ header {
     opacity: .6;
 }
 
+.fixed-header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    opacity: .9;
+}
+
 .overlayer {
     display: none;
     position: fixed;
@@ -363,6 +370,9 @@ header {
     height: 9rem;
     border-radius: 0.25rem 0 0 0.25rem;
     padding-right: .8rem;
+    text-align: center;
+    font-weight: bolder;
+    color: #9c2b3a;
 }
 
 .l-item-text {
@@ -436,6 +446,11 @@ header {
 
 .text-black {
     color: #000000;
+}
+
+#pagination {
+    text-align: center;
+    top: 0;
 }
 
 /* responsiveness */

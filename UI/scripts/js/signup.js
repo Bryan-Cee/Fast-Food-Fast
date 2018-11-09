@@ -30,7 +30,7 @@ function create_account(e) {
         })
     }
 
-    const request = new Request('http://localhost:5000/api/v2/auth/signup', reqInit);
+    const request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/auth/signup', reqInit);
 
     fetch(request)
         .then(res => res.json())
@@ -51,7 +51,7 @@ function create_account(e) {
             let password_msg = document.getElementById('password_msg');
             let password_err = "Enter a password longer than 6 characters";
             let password_len_err = "Password must have atleast one lowercase one upper case and one digit";
-                
+
             let pwd = document.getElementById('password');
 
             if (json.message == name_err) {

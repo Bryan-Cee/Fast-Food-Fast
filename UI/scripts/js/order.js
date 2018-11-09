@@ -21,7 +21,7 @@ function order(e) {
         })
     }
 
-    let request = new Request('http://localhost:5000/api/v2/users/orders', reqInit);
+    let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/users/orders', reqInit);
 
 
     fetch(request)
@@ -34,7 +34,7 @@ function order(e) {
             } else if (json.message == 'Token has expired Please login again') {
                 Alert(json.message);
                 window.location.href = '../../../home.html';
-            } 
+            }
             // Alert(json.message)
         })
 

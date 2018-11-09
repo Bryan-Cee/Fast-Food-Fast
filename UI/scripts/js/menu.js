@@ -9,7 +9,7 @@ let reqInit = {
     'headers': reqHeader
 };
 
-let request = new Request('http://localhost:5000/api/v2/menu', reqInit);
+let request = new Request('https://immense-ocean-82555.herokuapp.com/api/v2/menu', reqInit);
 
 
 let createNode = (element) => document.createElement(element);
@@ -29,7 +29,7 @@ fetch(request)
                 // img
                 let img = createNode('img');
                 img.src = meal.pic;
-                img.alt = `A picture of ${meal.meal_name}`
+                img.alt = `  ${meal.meal_name}`
 
                 // div-main
                 let first_div = createNode('div');
@@ -81,7 +81,7 @@ fetch(request)
             if (json.message == "Please login") {
                 window.location.href = "../../../home.html";
             }
-            
+
             append(meal_list, response);
         }
 

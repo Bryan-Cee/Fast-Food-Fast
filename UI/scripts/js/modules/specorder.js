@@ -11,7 +11,7 @@ function getSpecOrder(e) {
 
     let orderId = document.getElementById("order_id").value;
 
-    const userReq = new Request(`http://localhost:5000/api/v2/orders/${orderId}`, specInit);
+    const userReq = new Request(`https://immense-ocean-82555.herokuapp.com/api/v2/orders/${orderId}`, specInit);
 
     fetch(userReq)
         .then(res => res.json())

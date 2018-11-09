@@ -12,7 +12,7 @@ let alertOk = document.getElementById('ok');
         })
     };
 
-    let req = new Request("http://localhost:5000/api/v2/orders/", reqInit);
+    let req = new Request("https://immense-ocean-82555.herokuapp.com/api/v2/orders/", reqInit);
 
     fetch(req)
         .then(res => res.json())
